@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from '@react-navigation/native';
 import HomeView from '../../views/HomeView';
 import Icons from './Icons';
+import ShopsView from '../../views/ShopsView';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +22,7 @@ export default function BottomTabs() {
             <Tab.Screen name="Place" component={HomeView} options={{
                 tabBarIcon: ({ size, color }) => (<Icons framework="Ionicons" name="earth" color={color} size={size} />)
             }} />
-            <Tab.Screen name="Boutiques" component={HomeView} options={{
+            <Tab.Screen name="Boutiques" component={ShopsView} options={{
                 tabBarBadge: 'New',
                 tabBarIcon: ({ size, color }) => (<Icons framework="Feather" name="shopping-bag" color={color} size={size} />)
             }} />

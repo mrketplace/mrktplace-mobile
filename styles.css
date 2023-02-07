@@ -1,0 +1,29 @@
+.viewTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.shopsGridView {
+    width: 100%;
+    /* height: 95%; */
+}
+
+.shopsGridViewContent {
+    display: 'flex';
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 15px 0px;
+}
+
+.shopCard {
+    width: 160px;
+    height: 160px;
+    background-color: rgb(200, 200, 200);
+    margin: 12px;
+    border-radius: 30px;
+}

@@ -1,13 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import BottomNavbar from './src/components/basics/BottomNavbar';
+import BottomTabs from './src/components/basics/BottomTabs';
 
 export default function App() {
   // Component rendering
   return (
     <NavigationContainer>
       {/* theme={userTheme === 'dark' ? theme.dark : theme.light}> */}
-      <BottomNavbar />
+      <BottomTabs />
     </NavigationContainer>
   );
 }
