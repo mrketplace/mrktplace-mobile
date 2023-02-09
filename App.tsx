@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import fonts from './fonts';
-import BottomTabs from './src/components/basics/BottomTabs';
+import BottomTabs from './src/components/base/BottomTabs';
 
 export default function App() {
   // Font loading

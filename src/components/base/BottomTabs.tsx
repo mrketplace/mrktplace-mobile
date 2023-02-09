@@ -1,5 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ActusView from '../../views/ActusView';
 import HomeView from '../../views/HomeView';
+import NotifsView from '../../views/NotifsView';
 import Icons from './Icons';
 import { ShopViewStack } from './ShopViewStack';
 
@@ -31,11 +33,11 @@ export default function BottomTabs() {
                 tabBarBadge: 'New',
                 tabBarIcon: ({ size, color }) => (<Icons framework="Feather" name="shopping-bag" color={color} size={size} />)
             }} />
-            <Tab.Screen name="Actus" component={HomeView} options={{
+            <Tab.Screen name="Actus" component={ActusView} options={{
                 tabBarBadge: '12',
                 tabBarIcon: ({ size, color }) => (<Icons framework="FontAwesome" name="newspaper-o" color={color} size={size} />)
             }} />
-            <Tab.Screen name="Notifications" component={HomeView} options={{
+            <Tab.Screen name="Notifications" component={NotifsView} options={{
                 tabBarBadge: '99+',
                 tabBarIcon: ({ size, color }) => (<Icons framework="Octicons" name="bell" color={color} size={size} />)
             }} />
