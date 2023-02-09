@@ -1,20 +1,24 @@
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTheme } from '@react-navigation/native';
 import HomeView from '../../views/HomeView';
 import Icons from './Icons';
-import ShopGridView from '../../views/ShopGridView';
 import { ShopViewStack } from './ShopViewStack';
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
-    // Properties
-    const { colors } = useTheme();
     // Component rendering
     return (
         <Tab.Navigator screenOptions={{
             headerShown: true,
+            headerTitleStyle: {
+                fontFamily: 'Poppins-Bold',
+            },
+            tabBarLabelStyle: {
+                fontFamily: 'Poppins-Bold',
+            },
+            tabBarBadgeStyle: {
+                fontFamily: 'Poppins-Bold',
+            },
             // tabBarActiveTintColor: colors.activeIcon,
             // tabBarInactiveTintColor: colors.inactiveIcon,
             // tabBarHideOnKeyboard: true,
@@ -35,6 +39,6 @@ export default function BottomTabs() {
                 tabBarBadge: '99+',
                 tabBarIcon: ({ size, color }) => (<Icons framework="Octicons" name="bell" color={color} size={size} />)
             }} />
-        </Tab.Navigator>
+        </Tab.Navigator >
     );
 }

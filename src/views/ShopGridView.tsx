@@ -30,7 +30,7 @@ export default function ShopGridView({ navigation }: { navigation: any }) {
                 {shops}
                 <TouchableOpacity style={[styles.goToTopBtn, (shops.length % 2 != 0) ? styles.shopCard : null]}>
                     <Icons framework="Feather" name="arrow-up-circle" color={'rgb(100, 100, 100)'} size={50} />
-                    <Text style={{ marginTop: 10, fontFamily: 'Poppins-Regular', color: 'rgb(100, 100, 100)' }}>Revenir en haut</Text>
+                    <Text style={{ marginTop: 5, fontFamily: 'Poppins-SemiBold', color: 'rgb(100, 100, 100)' }}>Revenir en haut</Text>
                 </TouchableOpacity>
             </ScrollView>
         </View>

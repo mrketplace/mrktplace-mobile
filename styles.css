@@ -1,3 +1,10 @@
+.container {
+    flex: 1;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
 .viewTitle {
     font-size: 20px;
     font-weight: bold;
@@ -23,7 +30,6 @@
     align-self: center;
     justify-content: space-between;
     margin-top: 12px;
-    /* background-color: red; */
 }
 
 .shopCard {
@@ -45,4 +51,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.errorView {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.errorImg {
+    height: 50%;
+
+}
+
+.errorViewText {
+    font-size: 22px;
+    text-align: center;
 }
