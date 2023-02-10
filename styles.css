@@ -1,8 +1,19 @@
+/* Basic container */
 .container {
     flex: 1;
     background-color: #fff;
     align-items: center;
     justify-content: center;
+}
+
+.viewContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: white;
+    justify-content: start;
+    align-items: start;
+    padding: 15px 0;
 }
 
 .viewTitle {
@@ -69,4 +80,26 @@
 .errorViewText {
     font-size: 22px;
     text-align: center;
+}
+
+.viewTitleText {
+    font-size: 26px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.carouselContainer {
+    height: 220px;
+    margin-bottom: 15px;
+}
+
+.carouselSlide {
+    background-color: rgb(200, 200, 200);
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.carouselItem {
+    border-radius: 20px;
 }

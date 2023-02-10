@@ -8,6 +8,7 @@ export default function ShopView({ route }: { route: any }) {
     // Component rendering
     return (isReachable) ? <WebView
         source={{ uri: route.params.uri }}
+        // TODO Correct error management
         onError={() => setReachable(false)}
         containerStyle={{ backgroundColor: 'green', margin: 0, padding: 0 }}
         // renderError={(errorName) => <ErrorView />}
