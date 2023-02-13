@@ -1,20 +1,21 @@
-import { ScrollView, TouchableOpacity, Text, View, Vibration } from 'react-native';
+import { ScrollView, TouchableOpacity, Text, View } from 'react-native';
 import { useRef } from 'react';
 import styles from '../../styles.css';
 import Icons from '../components/base/Icons';
 import ShopCard from "../components/ShopCard";
 import shopsJson from '../data/shops.json';
+import Shop from '../models/Shop';
 
 export default function ShopGridView({ navigation }: { navigation: any }) {
     // Datas loading
     const shops: JSX.Element[] = [];
-    shopsJson.forEach((shop, index) => {
+    shopsJson.forEach((shopJson, index) => {
         shops.push(
-            <ShopCard key={index} navigation={navigation} shopName={shop.name} shopUri={shop.uri} />
+            <ShopCard key={index} navigation={navigation} shop={new Shop(shopJson)} />
         );
     });
     shops.push(
-        <ShopCard key={15} navigation={navigation} shopName={"shop.name"} shopUri={"https://caf.fr"} />
+        <ShopCard key={15} navigation={navigation} shop={new Shop({ id: 999, name: "shop.name", url: "https://caf.fr" })} />
     );
     // Properties
     const scrollRef: any = useRef();
@@ -35,7 +36,6 @@ export default function ShopGridView({ navigation }: { navigation: any }) {
                 <TouchableOpacity
                     style={[styles.goToTopBtn, (shops.length % 2 != 0) ? styles.shopCard : null]}
                     onPress={() => {
-                        Vibration.vibrate();
                         scrollRef.current?.scrollTo({
                             y: 0,
                             animated: true,

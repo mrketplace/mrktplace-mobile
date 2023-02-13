@@ -1,14 +1,17 @@
 [
   {
+    "id": 1,
     "name": "Allthingsyouwantshop",
-    "uri": "https://www.instagram.com/allthingsyouwantshoppp/"
+    "url": "https://www.instagram.com/allthingsyouwantshoppp/"
   },
   {
+    "id": 2,
     "name": "Kirei Look",
-    "uri": "https://www.instagram.com/kirei.look/"
+    "url": "https://www.instagram.com/kirei.look/"
   },
   {
+    "id": 3,
     "name": "Nouveau Allthings",
-    "uri": ""
+    "url": ""
   }
 ]

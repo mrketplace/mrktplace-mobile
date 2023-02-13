@@ -7,7 +7,10 @@ export default function ShopCard(props: any) {
     const navigation: any = useNavigation();
     // Component rendering
     return (
-        <TouchableOpacity onPress={() => navigation.navigate('ShopView', { uri: props.shopUri })}>
+        <TouchableOpacity onPress={() => {
+            console.log(props.shop);
+            navigation.navigate('ShopView', { shopUrl: props.shop.url });
+        }}>
             <View style={styles.shopCard}>
 
 

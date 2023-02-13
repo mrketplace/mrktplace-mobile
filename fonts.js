@@ -1,4 +1,5 @@
 const fonts = {
+    // Poppins
     "Poppins-Thin": require("./assets/fonts/Poppins/Poppins-Thin.ttf"),
     "Poppins-Light": require("./assets/fonts/Poppins/Poppins-Light.ttf"),
     "Poppins-Medium": require("./assets/fonts/Poppins/Poppins-Medium.ttf"),
