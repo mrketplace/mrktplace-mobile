@@ -12,6 +12,5 @@ export default function ShopView({ route }: { route: any }) {
         onError={() => setReachable(false)}
         containerStyle={{ backgroundColor: 'green', margin: 0, padding: 0 }}
         renderError={(errorName) => <ErrorView />}
-        render
     /> : <ErrorView />;
 }

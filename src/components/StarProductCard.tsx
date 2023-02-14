@@ -1,5 +1,6 @@
-import { TouchableOpacity, View, Image } from "react-native";
+import { TouchableOpacity, View, Image, Text } from "react-native";
 import styles from '../../styles.css';
+import ArchivoText from "./ArchivoText";
 import Icons from "./base/Icons";
 import PoppinsText from "./PoppinsText";
 
@@ -24,7 +25,7 @@ export default function StarProductCard() {
             </TouchableOpacity>
             <View style={styles.starProductCardBottomSection}>
                 {/* Product Details */}
-                <PoppinsText content={product.name} style={styles.starProductName} />
+                <ArchivoText content={product.name} style={styles.starProductName} />
                 <PoppinsText
                     content={product.details}
                     variant={"Regular"}

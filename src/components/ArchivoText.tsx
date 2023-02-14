@@ -1,8 +1,8 @@
 import { Text } from "react-native";
 
-export default function PoppinsText(props: any) {
+export default function ArchivoText(props: any) {
     // Font loading
-    const fontFamily = (props.variant != null) ? 'Poppins-' + props.variant : 'Poppins-SemiBold';
+    const fontFamily = (props.variant != null) ? 'Archivo-' + props.variant : 'Archivo-SemiBold';
     return (
         <Text
             numberOfLines={props.numberOfLines}

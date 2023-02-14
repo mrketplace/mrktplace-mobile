@@ -1,11 +1,11 @@
-import PoppinsText from "./PoppinsText";
 import styles from '../../styles.css';
+import ArchivoText from "./ArchivoText";
 
 export default function ViewTitleText(props: any) {
     // Component rendering
     return (
-        <PoppinsText
-            variant={"Bold"}
+        <ArchivoText
+            variant={"ExtraBold"}
             style={styles.viewTitleText}
             content={props.title} />
     );
