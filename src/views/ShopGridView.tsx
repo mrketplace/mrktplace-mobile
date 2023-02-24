@@ -1,29 +1,50 @@
-import { ScrollView, TouchableOpacity, Text, View } from 'react-native';
-import { useRef } from 'react';
+import { ScrollView, TouchableOpacity, Text, View, RefreshControl } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../../styles.css';
 import Icons from '../components/base/Icons';
 import ShopCard from "../components/ShopCard";
+import api from '../mrktplace-models/api.json';
 import shopsJson from '../data/shops.json';
-import Shop from '../models/Shop';
+import Shop from '../mrktplace-models/Shop';
 
 export default function ShopGridView({ navigation }: { navigation: any }) {
-    // Datas loading
-    const shops: JSX.Element[] = [];
-    shopsJson.forEach((shopJson, index) => {
-        shops.push(
-            <ShopCard key={index} navigation={navigation} shop={new Shop(shopJson)} />
-        );
-    });
-    shops.push(
-        <ShopCard key={15} navigation={navigation} shop={new Shop({ id: 999, name: "shop.name", url: "https://caf.fr" })} />
-    );
     // Properties
+    const [refresh, setRefresh] = useState(false);
+    const [shops, setShops] = useState([]);
     const scrollRef: any = useRef();
+    // Datas fecthing
+    const getDatas = () => {
+        setRefresh(true);
+        fetch(api.serverIp + api.shops.get, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => response.json())
+            .then(jsonData => {
+                // console.log(jsonData.shops); //! debug
+                const data: any = [];
+                jsonData.shops.forEach((shop: any, index: number) => {
+                    data.push(
+                        <ShopCard key={index} navigation={navigation} shop={new Shop(shop)} />
+                    );
+                });
+                setShops(data);
+            })
+            .catch(error => {
+                console.error("API ERROR -> " + error);
+            })
+            .finally(() => setRefresh(false));
+    };
+    useEffect(() => {
+        getDatas();
+    }, []);
     // Component rendering
     return (
         <View style={styles.shopsGridViewContainer}>
             {/* Titre */}
-            {/* <Text style={styles.viewTitle}>Médicaments</Text> */}
+            {/* <Text style={styles.viewTitle}>Boutiques</Text> */}
             {/* Cards */}
             <ScrollView
                 ref={scrollRef}
@@ -31,6 +52,9 @@ export default function ShopGridView({ navigation }: { navigation: any }) {
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.shopsGridViewContent}
+                refreshControl={
+                    <RefreshControl refreshing={refresh} onRefresh={getDatas} />
+                }
             >
                 {shops}
                 <TouchableOpacity

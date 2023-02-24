@@ -9,6 +9,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+src/mrktplace-models/
 
 # macOS
 .DS_Store
