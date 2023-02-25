@@ -1,4 +1,4 @@
-import { Image, TouchableHighlight, TouchableOpacity } from "react-native";
+import { Image, TouchableHighlight } from "react-native";
 import styles from '../../styles.css';
 
 export default function CarouselItem(props: any) {

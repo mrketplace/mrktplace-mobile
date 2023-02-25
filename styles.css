@@ -51,6 +51,12 @@
     box-shadow: 0px 10px 5px rgb(240, 240, 240);
 }
 
+.shopCardImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
 .goToTopBtn {
     width: 100%;
     height: 170px;
@@ -109,6 +115,7 @@
 .aLaUneImg {
     width: 100%;
     height: 100%;
+    background-color: rgb(59, 59, 59);
     border-radius: 30px;
 }
 

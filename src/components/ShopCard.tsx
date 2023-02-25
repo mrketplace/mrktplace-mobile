@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from '../../styles.css';
 
@@ -12,8 +12,11 @@ export default function ShopCard(props: any) {
             navigation.navigate('ShopView', { shopUrl: props.shop.url });
         }}>
             <View style={styles.shopCard}>
-
-
+                <Image
+                    resizeMode={"cover"}
+                    style={styles.shopCardImg}
+                    source={{ uri: props.shop.img }}
+                />
             </View>
         </TouchableOpacity>
     );

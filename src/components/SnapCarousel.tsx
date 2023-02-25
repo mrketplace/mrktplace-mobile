@@ -11,7 +11,7 @@ export default function SnapCarousel(props: any) {
     const carouselRef: any = useRef();
     // Item building
     const renderItem = ({ item }: { item: any }) => (
-        <CarouselItem img={item.src} />
+        <CarouselItem img={item.img} />
     );
     // Component rendering
     return (

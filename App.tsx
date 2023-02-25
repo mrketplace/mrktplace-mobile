@@ -5,18 +5,15 @@ import { View, Text } from 'react-native';
 import fonts from './fonts';
 import BottomTabs from './src/components/base/BottomTabs';
 import SplashScreen from './src/views/SplashScreen';
+import 'localstorage-polyfill';
 
 export default function App() {
   // Font loading
   const [fontsLoaded] = useFonts(fonts);
-  useEffect(() => {
-    console.log("isFontLoaded => " + fontsLoaded);
-  }, [fontsLoaded])
   // SplashScreen timer configs
   const [isSplashTimePassed, setSplashTimePassed] = useState(false);
   if (!isSplashTimePassed) {
     setTimeout(() => {
-      console.log("isSplashTimePassed => " + isSplashTimePassed);
       setSplashTimePassed(true);
     }, 5000);
   }
